@@ -5,6 +5,8 @@ GRACE is a Java applet that allows the student to specify constructions and thei
 
 It was written in Summer 1996, and not updated since, but still basically works. 
 
+For more info, see [the project homepage](https://www.cs.rice.edu/~jwarren/grace/).
+
 # Screenshot
 
 
