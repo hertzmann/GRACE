@@ -1,0 +1,68 @@
+
+Construction "Axiom - SSS"
+"Show that two triangles are identical"
+
+Input:
+P0 "first vertex of first triangle" (113,230)
+P1 "second vertex of first triangle" (195,232)
+P2 "third vertex of first triangle" (163,135)
+P3 "first vertex of second triangle" (327,230)
+P4 "second vertex of second triangle" (405,226)
+P5 "third vertex of second triangle" (361,132)
+Assume dist(P3,P4)=dist(P0,P1)
+Assume dist(P5,P4)=dist(P2,P1)
+Assume dist(P3,P5)=dist(P0,P2)
+
+Steps:
+Force angle(P5,P3,P4) = angle(P2,P0,P1)
+Force angle(P3,P4,P5) = angle(P0,P1,P2)
+Force angle(P3,P5,P4) = angle(P0,P2,P1)
+
+Output:
+Conclude angle(P3,P5,P4)=angle(P0,P2,P1)
+Conclude angle(P3,P4,P5)=angle(P0,P1,P2)
+Conclude angle(P5,P3,P4)=angle(P2,P0,P1)
+
+
+Construction "Axiom - SAS"
+"Show that two triangles are identical"
+
+Input:
+P0 "vertex of included angle of first triangle" (97,213)
+P1 "second vertex of first triangle" (178,212)
+P2 "third vertex of first triangle"  (145,121)
+P3 "vertex of included angle of second triangle" (286,216)
+P4 "second vertex of second triangle" (370,217)
+P5 "third vertex of second triangle" (330,126)
+Assume dist(P0,P1)=dist(P3,P4)
+Assume dist(P3,P5)=dist(P0,P2)
+Assume angle(P5,P3,P4)=angle(P2,P0,P1)
+
+Steps:
+Force dist(P2,P1) = dist(P5,P4)
+Force angle(P3,P4,P5) = angle(P0,P1,P2)
+Force angle(P3,P5,P4) = angle(P0,P2,P1)
+
+Output:
+Conclude angle(P3,P5,P4)=angle(P0,P2,P1)
+Conclude angle(P3,P4,P5)=angle(P0,P1,P2)
+Conclude dist(P2,P1)=dist(P5,P4)
+
+
+Construction "SumAnglesTri=Pi"
+"Show that the sum of the angles in a
+"triangle is PI
+
+Input:
+P0 "first vertex of triangle" (218,234)
+P1 "second vertex of triangle" (316,232)
+P2 "thrid vertex of triangle" (271,167)
+
+Steps:
+Force PI=angle(P0,P2,P1)+angle(P0,P1,P2)+angle(P1,P0,P2)
+
+Output:
+Conclude PI=angle(P0,P2,P1)+angle(P0,P1,P2)+angle(P1,P0,P2)
+
+
+

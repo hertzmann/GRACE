@@ -1,0 +1,251 @@
+
+
+
+Construction "DoubleLength"
+"Place a new point on a line"
+"doubling the distance between"
+"the endpoints"
+
+Input:
+P0 "first endpoint" (204,224)
+P1 "second endpoint" (278,189)
+
+Steps:
+L2 = CompRay(P1,P0)
+C3 = Circle(P1,P0)
+I4 = Intersect(L2,C3)
+
+Output:
+I4
+Conclude dist(P0,P1)=dist(P1,I4)
+
+
+
+Construction "Axiom - SSS"
+"Show that two triangles are identical"
+
+Input:
+P0 "first vertex of first triangle" (113,230)
+P1 "second vertex of first triangle" (195,232)
+P2 "third vertex of first triangle" (163,135)
+P3 "first vertex of second triangle" (327,230)
+P4 "second vertex of second triangle" (405,226)
+P5 "third vertex of second triangle" (361,132)
+Assume dist(P3,P4)=dist(P0,P1)
+Assume dist(P5,P4)=dist(P2,P1)
+Assume dist(P3,P5)=dist(P0,P2)
+
+Steps:
+Force angle(P5,P3,P4) = angle(P2,P0,P1)
+Force angle(P3,P4,P5) = angle(P0,P1,P2)
+Force angle(P3,P5,P4) = angle(P0,P2,P1)
+
+Output:
+Conclude angle(P3,P5,P4)=angle(P0,P2,P1)
+Conclude angle(P3,P4,P5)=angle(P0,P1,P2)
+Conclude angle(P5,P3,P4)=angle(P2,P0,P1)
+
+
+Construction "Axiom - SAS"
+"Show that two triangles are identical"
+
+Input:
+P0 "vertex of included angle of first triangle" (97,213)
+P1 "second vertex of first triangle" (178,212)
+P2 "third vertex of first triangle"  (145,121)
+P3 "vertex of included angle of second triangle" (286,216)
+P4 "second vertex of second triangle" (370,217)
+P5 "third vertex of second triangle" (330,126)
+Assume dist(P0,P1)=dist(P3,P4)
+Assume dist(P3,P5)=dist(P0,P2)
+Assume angle(P5,P3,P4)=angle(P2,P0,P1)
+
+Steps:
+Force dist(P2,P1) = dist(P5,P4)
+Force angle(P3,P4,P5) = angle(P0,P1,P2)
+Force angle(P3,P5,P4) = angle(P0,P2,P1)
+
+Output:
+Conclude angle(P3,P5,P4)=angle(P0,P2,P1)
+Conclude angle(P3,P4,P5)=angle(P0,P1,P2)
+Conclude dist(P2,P1)=dist(P5,P4)
+
+Construction "Axiom - ASA"
+"Show that two triangles are identical"
+
+Input:
+P0 "vertex opposite included side of first triangle" (107,226)
+P1 "second vertex of first triangle"  (195,225)
+P2 "third vertex of first triangle"   (154,141)
+P3 "vertex opposite included side of second triangle" (299,225)
+P4 "second vertex of second triangle" (394,221)
+P5 "third vertex of second triangle" (343,134)
+Assume dist(P4,P5)=dist(P1,P2)
+Assume angle(P3,P4,P5)=angle(P0,P1,P2)
+Assume angle(P3,P5,P4)=angle(P0,P2,P1)
+
+Steps:
+Force dist(P3,P5) = dist(P0,P2)
+Force dist(P3,P4) = dist(P0,P1)
+Force angle(P5,P3,P4) = angle(P2,P0,P1)
+
+Output:
+Conclude angle(P5,P3,P4)=angle(P2,P0,P1)
+Conclude dist(P3,P4)=dist(P0,P1)
+Conclude dist(P3,P5)=dist(P0,P2)
+
+
+
+Construction "Midpoint"
+"Place the midpoint between two points"
+
+Input:
+P0 "first endpoint" (130,122)
+P1 "second endpoint" (244,131)
+
+Steps:
+C2 = Circle(P0,P1)
+C3 = Circle(P1,P0)
+I4 I5 = Intersect(C2,C3)
+"Axiom - SSS"(P0,I4,I5,P1,I4,I5)
+L6 = LineSegment(P0,P1)
+L7 = LineSegment(I5,I4)
+I8 = Intersect(L6,L7)
+"Axiom - SAS"(I5,I8,P0,I5,I8,P1)
+
+Output:
+I8
+Conclude dist(I8,P0)=dist(I8,P1)
+
+
+Construction "Axiom - Angle Sum"
+"Show that an angle is equal to the
+"sum of its parts"
+
+Input:
+P0 "first of three colinear points" (159,202)
+P1 "second of three colinear points" (236,201)
+P2 "third of three colinear points" (307,203)
+P3 "noncollinear point" (236,109)
+Assume dist(P2,P0)=dist(P0,P1)+dist(P1,P2)
+
+Steps:
+Force angle(P0,P3,P2) = angle(P0,P3,P1)+angle(P1,P3,P2)
+Force PI = angle(P0,P1,P3)+angle(P3,P1,P2)
+
+Output:
+Conclude PI=angle(P0,P1,P3)+angle(P3,P1,P2)
+Conclude angle(P0,P3,P2)=angle(P0,P3,P1)+angle(P1,P3,P2)
+
+
+
+
+Construction "OppositeAngles"
+"Show that opposite angles are equal"
+
+Input:
+P0 "first vertex on quadrilateral" (185,208)
+P1 "second vertex on quadrilateral" (290,208)
+P2 "vertex opposite preceding vertex on quadrilateral" (192,107)
+P3 "last vertex on quadrilateral" (310,117)
+P4 "intersection point of diagonals" (249,160)
+Assume dist(P0,P3)=dist(P4,P0)+dist(P3,P4)
+Assume dist(P1,P2)=dist(P2,P4)+dist(P4,P1)
+
+Steps:
+"Axiom - Angle Sum"(P3,P4,P0,P2)
+"Axiom - Angle Sum"(P2,P4,P1,P0)
+"Axiom - Angle Sum"(P3,P4,P0,P1)
+
+Output:
+Conclude angle(P3,P4,P1)=angle(P2,P4,P0)
+Conclude angle(P3,P4,P2)=angle(P0,P4,P1)
+
+
+Construction "Parallelogram"
+"Construct a parallelogram from two edges"
+
+Input:
+P0 "first vertex of three, opposite new vertex" (199,248)
+P1 "second vertex of three, adjacent to new vertex" (276,249)
+P2 "third vertex of three, adjacent to new vertex" (211,168)
+
+Steps:
+A3 = "Midpoint"(P1,P2)
+A4 = "DoubleLength"(P0,A3)
+"OppositeAngles"(P0,P1,P2,A4,A3)
+"Axiom - SAS"(A3,P2,A4,A3,P1,P0)
+"Axiom - SAS"(A3,P2,P0,A3,P1,A4)
+
+Output:
+A3
+A4
+Conclude dist(P0,P2)=dist(A4,P1)
+Conclude angle(A3,P1,A4)=angle(A3,P2,P0)
+Conclude angle(A3,A4,P1)=angle(A3,P0,P2)
+Conclude dist(A4,P2)=dist(P0,P1)
+Conclude angle(A3,P1,P0)=angle(A3,P2,A4)
+Conclude angle(A3,P0,P1)=angle(A3,A4,P2)
+
+Construction "Axiom - Parallel"
+"Show that opposite angles between parallel lines
+"are equal
+
+Input:
+P0 "first vertex of quadrilateral" (213,224)
+P1 "second vertex of quadrilateral" (335,224)
+P2 "vertex opposite preceding vertex" (215,147)
+P3 "final vertex of quadrilateral" (351,141)
+Assume angle(P0,P1,P2)=angle(P1,P2,P3)
+
+Steps:
+Force angle(P0,P3,P2) = angle(P1,P0,P3)
+
+Output:
+Conclude angle(P0,P3,P2)=angle(P1,P0,P3)
+
+
+Construction "SumAnglesTri=Pi"
+"Show that the sum of the angles in a
+"triangle is PI
+
+Input:
+P0 "first vertex of triangle" (218,234)
+P1 "second vertex of triangle" (316,232)
+P2 "thrid vertex of triangle" (271,167)
+
+Steps:
+A3 A4 = "Parallelogram"(P0,P1,P2)
+A5 = "DoubleLength"(A4,P2)
+"Axiom - Parallel"(P0,P1,P2,A4)
+"Axiom - Parallel"(P1,P0,A4,A5)
+"Axiom - Parallel"(P0,P1,A5,P2)
+"Axiom - Angle Sum"(A5,P2,A4,P0)
+"Axiom - Angle Sum"(P0,A3,A4,P2)
+
+Output:
+Conclude PI=angle(P0,P2,P1)+angle(P0,P1,P2)+angle(P1,P0,P2)
+
+
+
+Construction "SumAnglesQuad=2Pi"
+"The sum of the angles in a quadrilateral
+"is 2 times PI
+
+Input:
+P0 "first vertex of quadrilateral" (155,207)
+P1 "second vertex of quadrilateral" (274,206)
+P2 "vertex opposite preceding vertex" (193,109)
+P3 "final vertex of quadrilateral" (306,107)
+
+Steps:
+LS4 = LineSegment(P0,P3)
+LS5 = LineSegment(P2,P1)
+I6 = Intersect(LS4,LS5)
+"Axiom - Angle Sum"(P0,I6,P3,P2)
+"Axiom - Angle Sum"(P0,I6,P3,P1)
+"SumAnglesTri=Pi"(P0,P1,P2)
+"SumAnglesTri=Pi"(P2,P1,P3)
+
+Output:
+Conclude 2*PI=angle(P0,P2,P3)+angle(P2,P3,P1)+angle(P0,P1,P3)+angle(P1,P0,P2)

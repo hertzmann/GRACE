@@ -1,0 +1,436 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <!-- SGI_COMMENT COSMOCREATE -->
+    <!-- SGI_COMMENT VERSION NUMBER="1.0.1" -->
+    <TITLE> GRACE Tutorial </TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<CENTER><H2 ALIGN="CENTER">
+GRACE Tutorial</H2>
+</CENTER><P>
+This is a quick step-by-step of how to use GRACE to create a simple 
+ruler compass construction, and a proof of it's correctness. The 
+tutorial will demonstrate some of GRACE's basic features. In the first 
+part of the tutorial, you will define the midpoint construction; in the 
+second, you will prove the correctness of the construction. The latter 
+parts of the tutorial introduce some of the more abstract concepts in 
+GRACE. The tutorial will make the most sense if you follow the steps in 
+order.</P>
+<P>
+<B>Contents</B> </P>
+<OL>
+    <LI>
+    <A HREF="#part1">The Midpoint Construction</A> 
+    <LI>
+    <A HREF="#part2">The Midpoint Theorem</A> 
+    <LI>
+    <A HREF="#part3">Angle Sum Axiom</A> 
+    <LI>
+    <A HREF="#part4">Sum of the Angles in a Quadrilateral Theorem</A> 
+</OL>
+<HR>
+<P>
+</P>
+<H2>
+<A NAME="part1">Part One: The Midpoint Construction</A></H2>
+<P>
+<A NAME="part1">In this exercise, you will create the midpoint 
+construction. </A></P>
+<OL>
+    <LI>
+    <A NAME="part1"><B>Start GRACE</B><BR>
+     To begin, click here: <APPLET CODE="Grace" WIDTH="100" HEIGHT="25">
+    <PARAM NAME="Library Name 1" VALUE="Basic">
+    <PARAM NAME="Library URL 1" VALUE="basic.con">
+    <PARAM NAME="Library Name 2" VALUE="Isoceles">
+    <PARAM NAME="Library URL 2" VALUE="isoceles.con">
+    <PARAM NAME="Library Name 3" VALUE="Angle Bisector">
+    <PARAM NAME="Library URL 3" VALUE="anglebi.con">
+    <PARAM NAME="Library Name 4" VALUE="Perp Bisector">
+    <PARAM NAME="Library URL 4" VALUE="perpbi.con">
+     (Sorry, your browser doesn't support Java. You must use a Java-compatible browser, such as Netscape 3.0, to proceed.) 
+    </APPLET> The main GRACE window will appear after a few minutes, 
+    depending on the speed of your network connection. Please be patient.</A>
+     
+    <P>
+    </P>
+    <LI>
+    <A NAME="part1"><B>The main GRACE window</B><BR>
+     The center of the main GRACE window is white drawing area, called the <B>Construction 
+    area</B> where you will create the construction. You can make this 
+    window larger by resizing the main GRACE window. (How you do this 
+    depends on what system you are using.) The other parts of the GRACE 
+    window will be explained later. </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="part1"><B>Place input points</B><BR>
+     Click on the <EM>Place Points</EM> button at the lower left of the 
+    window. Then click in the construction area once. A small box will 
+    appear near where you clicked; this is an input point. Click again 
+    somewhere else in the Construction area to place another input point. 
+    The construction we define will find the point halfway between these 
+    two points. </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="part1"><B>Place a line segment connecting the input points</B><BR>
+     On the right side of the window is a list of construction primitives, 
+    such as <EM>Circle</EM> and <EM>Line</EM>. Click on <EM>Line Segment</EM>, 
+    and then click on one of the input points. It will turn magenta to 
+    indicate that it is selected. Click on the second input point, and a 
+    line segment will appear, connecting the two input points. </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="part1"><B>Place two circles</B><BR>
+     Click on <EM>Circle</EM>. Click on each of the input points, and a 
+    circle will appear in the Construction area. The first input point you 
+    selected determines the center for this circle, and the second point is 
+    a point on the circumference of the circle. Place another circle, by 
+    clicking the inputs points in the opposite order. Now you should have 
+    two circles, each centered at one of the input points. </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="part1"><B>Intersect the circles</B><BR>
+     To find the intersection of the circles, click on <EM>Intersect</EM>, 
+    and then click on each of the circles. A filled dot will appear at each 
+    of the intersection points. These dots represent points like the input 
+    points, except that they are determined by the steps of the 
+    construction. You can apply primitives and constructions to input 
+    points and to dependent points. </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="part1"><B>Find the midpoint</B><BR>
+     Place another line segment, this time between the two filled circles. 
+    This line segment is the perpendicular bisector of the previous 
+    segment. (There is also a perpendicular bisector primitive, which makes 
+    the midpoint construction trivial, but for now we'll do it by the more 
+    elaborate method.) Intersect these two line segments; the intersection 
+    point is the midpoint. </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="part1"><B>Move the construction around</B><BR>
+     Click on the <EM>Drag input</EM> button in the lower-left corner 
+    of the GRACE window, and drag one of the input points around the 
+    construction area. Notice that all other steps of the construction move 
+    in order to maintain their original relationship with the input point, 
+    and the midpoint is always halfway between the two input points. We'll 
+    prove that this is the case in the second part of the tutorial. </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="part1"><B>Select outputs</B> <BR>
+     Click on the <EM>Select outputs</EM> button and then select the 
+    midpoint. This marks the midpoint as the sole output of the midpoint 
+    construction. </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="part1"><B>Save the construction</B><BR>
+     Select <EM>Name current...</EM> from the <EM>Construction</EM>
+     menu and type in a name for this construction (such as 
+    &quot;Midpoint&quot;) in the window that appears, and press <EM>OK</EM>. 
+    The new construction will appear in the list of available 
+    constructions, after the list of primitives.</A> 
+    <P>
+    <A NAME="part1">Now you can use the midpoint construction in other 
+    constructions. For example, select <EM>Clear workspace</EM> from 
+    the <EM>Edit</EM> to clear the Construction area and start over. 
+    Place two input points. Select the new construction, and apply it to 
+    the two input points. The midpoint will appear between these two 
+    points. When you apply the midpoint construction, GRACE internally goes 
+    through each step of the construction, and then displays the output 
+    shapes. (In this case, only the midpoint was output.) </A></P>
+    <P>
+    </P>
+    <LI>
+    <A NAME="part1"><B>View the labels and the textual representation</B><BR>
+     Select the <I>Labels</I> option from the <I>Edit</I> menu. Note 
+    that GRACE has given each shape a name. For instance, the input points 
+    have been labelled P0 and P1. Select the <I>Text</I> option from 
+    the <I>Windows</I> menu. The Text window shows a textual 
+    representation of the current construction in progress. As you place 
+    input points, apply constructions, and select outputs, the textual 
+    representation is updated. </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="part1"><B>View the Midpoint construction</B><BR>
+     Select your midpoint construction, and then select <I>View</I>
+     from the <I>Construction</I> menu. The Construction area will be 
+    erased and all the steps of the midpoint construction reappear as if 
+    they had just been entered. The contents of the Text window will also 
+    be updated. This feature allows you to see how a construction was made, 
+    and to added more steps to a construction. </A>
+</OL>
+<A NAME="part1"><HR>
+</A><P>
+</P>
+<H2>
+<A NAME="part2">Part Two: The Midpoint Theorem</A></H2>
+<P>
+<A NAME="part2">In this exercise, you will elaborate on the 
+construction of the previous step, to prove the midpoint construction 
+is valid. </A></P>
+<P>
+</P>
+<OL>
+    <LI>
+    <A NAME="part2"><B>The constraint window</B><BR>
+     Clear the construction place a line and a line segment, and intersect 
+    them. Select <I>Constraints</I> from the <I>Windows</I> menu. The 
+    constraints window will appear, with three portions. The top portion, 
+    representing input constraints is empty, since there are no 
+    requirements on the inputs to the midpoint construction. The bottom 
+    portion, &quot;Output constraints&quot;, is also empty because we have 
+    not selected any constraints as outputs.</A> 
+    <P>
+    <A NAME="part2">The middle portion of the Constraints window, 
+    &quot;Intermediate constraints&quot; contains all of the constraints 
+    that have been proven to be true. Currently, only one constraint has 
+    been derived; it asserts that the sum of the distances from the 
+    intersection point to the endpoints of the line segment is equal to the 
+    length of the line segment; in other words, the intersection point lies 
+    on the line segment. No corresponding constraint has been generated for 
+    the line, because the intersection point does not necessarily lie 
+    between the points that define the line.</A></P>
+    <P>
+    <A NAME="part2">The number before the constraint indicates which 
+    step in the construction generated the constraint. The &quot;A&quot; 
+    indicates that the constraint was generated automatically.</A></P>
+    <P>
+    </P>
+    <LI>
+    <A NAME="part2"><B>Check if we have proven midpoint already</B><BR>
+     View the midpoint construction again. We want to prove that the 
+    distance from the midpoint to each of the input points is the same. The 
+    Constraints window lists several constraints that have been 
+    automatically generated so far. Let us test to see if these constraints 
+    together imply the constraint we want.</A> 
+    <P>
+    <A NAME="part2">Select <I>Expressions</I> from the <I>Windows</I>
+     menu. The Expressions window will appear, and can be used to build up 
+    constraints. Click on &quot;New Distance,&quot; and then click on P0 
+    and I8 in the main window. This creates an expression for the distance 
+    between these points in the expression window. Below the text of the 
+    expression is a line, representing the value of the expression. Click 
+    &quot;New Distance&quot; again (or right-click in the main draw area), 
+    and then select the points P1 and I8. Note that you can drag the input 
+    points and watch the values of the expressions change.</A></P>
+    <P>
+    <A NAME="part2">Click &quot;Test intermediate&quot; and then select 
+    each of the new expressions to test if they are equal. (To select an 
+    expression, click on the visual representation, not the expression 
+    text.) Unfortunately, we have not yet proven this constraint.</A></P>
+    <P>
+    </P>
+    <LI>
+    <A NAME="part2"><B>Load the tutorial library</B><BR>
+     Close the Expression window and select <I>Tutorial</I> from the <I>Libraries</I>
+     menu. Two new axioms will appear in the construction list.</A> 
+    <P>
+    </P>
+    <LI>
+    <A NAME="part2"><B>Apply Side-Side-Side</B><BR>
+     We can show that the triangle(P0,I4,I5) is congruent to the 
+    triangle(P1,I4,I5). (This is because any two points on a circumference 
+    of a circle are equidistant from the center of the circle. Automatic 
+    constraints were generated based on this fact). Select &quot;Axiom - 
+    SSS&quot; and select the vertices of the triangles, in the following 
+    order: P0, I4, I5, P1, I4, I5. Note the new step in the Text window, 
+    and the new constraints in the Constraint window. One of the new 
+    constraints, <I>angle(P0,I4,I5) = angle(P1,I4,I5)</I>, will be used 
+    implicitly in the next step.</A> 
+    <P>
+    </P>
+    <LI>
+    <A NAME="part2"><B>Apply Side-Angle-Side</B><BR>
+     Now we can prove that the triangle(P0,I4,I8) is congruent to the 
+    triangle(P1,I4,I8). Note that the SAS axiom requires that <I>angle(P0,I4,I5) 
+    = angle(P1,I4,I8)</I>, but the constraint proven in the previous 
+    step used I8 instead of I5. This is not a problem, since GRACE treats 
+    angle(P0,I4,I5) as identical to angle(P0,I4,I8). GRACE can infer this 
+    equality because I5 and I8 must be collinear and on the same side of 
+    I8. This inference is a consequence of the sidedness rules, which will 
+    be discussed later.</A> 
+    <P>
+    <A NAME="part2">Select &quot;Axiom - SAS&quot;, and select the 
+    vertices in the following order: I4, I8, P0, I4, I8, P1. </A></P>
+    <P>
+    </P>
+    <LI>
+    <A NAME="part2"><B>Finish the theorem</B><BR>
+     Notice that one of the newly generated constraints, <I>dist(I8,P0) 
+    = dist(I8,P1)</I>, is exactly what we were seeking to prove. Click 
+    &quot;Create output&quot;, and click that constraint. It will be added 
+    to the &quot;Output constraints&quot; portion of the window. Select <I>Name 
+    current...</I> from the <I>Construction</I> menu to save the new 
+    construction. Apply the new midpoint construction to some pair of 
+    points, and notice that the output constraint has been added to the set 
+    of intermediate constraints. </A>
+</OL>
+<A NAME="part2"><HR>
+</A><P>
+</P>
+<H2>
+<A NAME="part3">Part Three: Angle Sum Axiom</A></H2>
+<P>
+<A NAME="part3">In this exercise, we will create an axiom which asserts 
+that (1) the sum of two angles on a line is PI, and (2) an angle is 
+equal to the sum of its parts. Axioms in GRACE are treated the same as 
+theorems; we consider an axiom to be a theorem stated without proof. 
+This will be explained in the following steps. </A></P>
+<P>
+</P>
+<OL>
+    <LI>
+    <A NAME="part3"><B>Create the inputs</B><BR>
+     Clear the workspace and place three input points in a line, such that 
+    the second input point is between the first two.</A> 
+    <P>
+    <A NAME="part3">Place a fourth input point somewhere off the line.</A></P>
+    <P>
+    </P>
+    <LI>
+    <A NAME="part3"><B>Make an assumption</B><BR>
+     This axiom will require that the point P1 is on the line segment 
+    between P0 and P2. To ensure this condition, we must create an input 
+    constraint (also called an assumption) that asserts <I>dist(P0,P1)+dist(P1,P2) 
+    = dist(P0,P2)</I>. Open the Expression window and select &quot;New 
+    Distance.&quot; Select P0 and P1, then P1 and P2. Note that selecting 
+    two distances, one right after the other, sets the expression to be the 
+    sum of the distances. You can add as many distances as you want this 
+    way. This action creates the expression on the left side of the 
+    assumption. Select &quot;New Distance&quot; again and click P0 and P2. 
+    This is the right side.</A> 
+    <P>
+    <A NAME="part3">Select &quot;Create input&quot; in the Constraint 
+    window, and then click each of the two new expressions. The input 
+    constraint will appear in the Constraint window. Note that the actual 
+    positions of the points in the draw area do not have to match the 
+    assumption; enforcing this requirement is a very difficult problem. 
+    Instead, this assumption represents a symbolic relationship between the 
+    points; <B>if</B> the points do meet the assumption, then anything 
+    we prove based on the assumption will also be true.</A></P>
+    <P>
+    <A NAME="part3">The input constraint is also a requirement that 
+    must be met before the axiom can be applied. This will be discussed 
+    more later. </A></P>
+    <P>
+    </P>
+    <LI>
+    <A NAME="part3"><B>Force some constraints</B><BR>
+     Next, we want to assert the constraint <I>angle(P0,P3,P2) = 
+    angle(P0,P3,P1) + angle(P1,P3,P2) </I>. Click &quot;New 
+    Angle&quot;, and then select P0, P3, and P2. Then create the right side 
+    of the expression as before and click &quot;Force intermediate.&quot; 
+    Select the two new expressions. The constraint has now been forced - 
+    GRACE accepts it without proof. Unlike Unlike an input constraint 
+    (which also does not require proof), the forced constraint will not 
+    require any additional conditions before the axiom can be applied.</A>
+     
+    <P>
+    <A NAME="part3">Force the constraint <I>PI=angle(P0,P1,P3)+angle(P3,P1,P2)</I>. 
+    To create an expression for PI, click &quot;New Angle&quot; and then 
+    &quot;Add PI&quot;. Notice that each of these constraints appears with 
+    an &quot;F&quot; in the Constraint window.</A></P>
+    <P>
+    </P>
+    <LI>
+    <A NAME="part3"><B>Finish the axiom</B><BR>
+     Click &quot;Create output&quot; and click each of the forced 
+    constraints in the Constraint window. The constraints will become 
+    outputs. Name the construction &quot;Axiom - Angle Sum&quot;</A> 
+    <P>
+    </P>
+    <LI>
+    <A NAME="part3"><B>Test the axiom</B><BR>
+     Clear the workspace and place four points at random. Try applying the 
+    new axiom to these points. Since the axiom's input constraint is not 
+    met, the axiom cannot be applied.</A> 
+    <P>
+    <A NAME="part3">To create a situation where the input constraint is 
+    met, we could introduce another assumption. Instead, construct two 
+    intersecting line segments (you may have to move the input points), and 
+    intersect them. Since these are line segments, the intersection points 
+    must lie between the endpoints, and GRACE will automatically generate 
+    new constraints for the intersection point. Now apply the angle sum 
+    axiom with two endpoints of a line segment as the first and third 
+    inputs, the intersection point as the second input, and any other point 
+    as the fourth input. Two new constraints appear in the constraint 
+    window.</A></P>
+    <P>
+    <A NAME="part3">Try intersecting different primitives and seeing 
+    what constraints are generated. For more information on automatic 
+    constraints, click </A><A HREF="math.html#automatic" NAME="part3">here</A><A
+     NAME="part3">. </A></P>
+</OL>
+<A NAME="part3"><HR>
+</A><P>
+</P>
+<H2>
+<A NAME="part4">Part Four: Sum of the Angles in a Quadrilateral Theorem</A></H2>
+<P>
+<A NAME="part4">In this exercise, we will prove that the sum of the 
+angles in a quadrilateral is 2 * PI. </A></P>
+<P>
+</P>
+<OL>
+    <LI>
+    <A NAME="part4"><B>Create the inputs and some line segments</B><BR>
+     Clear the workspace and create four input points. The points should 
+    represent a convex quadrilateral, with P0 opposite P2 and P1 opposite 
+    P3. Place a line segment from P0 to P2 and a line segment from P1 to 
+    P3. Intersect the line segments.</A> 
+    <P>
+    </P>
+    <LI>
+    <A NAME="part4"><B>Apply some theorems</B><BR>
+     Apply the &quot;SumAngleTri=Pi&quot; theorem to the points P0, P1, and 
+    P2, and to the points P2, P1, and P3. This shows that the sums of the 
+    angles in two triangles composing the quadrilateral is PI. Apply 
+    &quot;Axiom - Angle Sum&quot; to the points P0, I6, P2, P3; and the to 
+    points P1, I6, P3, P0. These are all the steps we need before we finish 
+    the proof; take a moment to understand what you have just done.</A> 
+    <P>
+    </P>
+    <LI>
+    <A NAME="part4"><B>Finish the theorem</B><BR>
+     The constraint we want to prove is <I>2*PI = angle(P0,P2,P3) + 
+    angle(P2,P3,P1) + angle(P0,P1,P3) + angle(P1,P0,P2)</I>. Notice 
+    that this constraint does not appear in the intermediate constraints; 
+    however, it is a direct consequence of them. GRACE recognizes this. 
+    Build the constraint using the expression window and &quot;Create 
+    output&quot;. Name the theorem.</A> 
+    <P>
+    </P>
+    <LI>
+    <A NAME="part4"><B>Make the construction fail</B><BR>
+     The theorem we have just proved is really only true for a convex 
+    quadrilateral, although this assumption appears nowhere explicitly in 
+    the theorem. Drag the input points around until the quadrilateral is no 
+    longer convex. Notice that the diagonals no longer intersect, and the <I>Status</I>
+     in the lower right corner of the main window has changed to 
+    &quot;Failed.&quot; Drag the points back to a convex arrangement; the <I>Status</I>
+     becomes &quot;Successful.&quot; Because the Intersect step did not 
+    produce the right number of outputs (zero instead of one), the 
+    construction failed. A construction fails when any intersection does 
+    not produce the expected number of outputs, or any sub-construction 
+    fails. </A>
+    <P>
+    <A NAME="part4">GRACE theorems are guaranteed to be true on two 
+    conditions: The input constraints must be met, and the construction 
+    must succeed. For more details, click </A><A
+     HREF="math.html#failure" NAME="part4">here</A><A NAME="part4"> </A></P>
+</OL>
+<A NAME="part4"><HR>
+</A><P>
+<A NAME="part4">Return to </A><A HREF="index.html" NAME="part4">GRACE 
+main page</A><A NAME="part4"> </A></P>
+</BODY>
+</HTML>

@@ -1,0 +1,138 @@
+
+Construction "AngleBisector"
+
+Input:
+P0 (205,420)
+P1 (329,413)
+P2 (277,182)
+
+Steps:
+R3 = Ray(P0,P2)
+C4 = Circle(P0,P1)
+I5 = Intersect(R3,C4)
+A6 = "Midpoint"(I5,P1)
+"Axiom - SSS"(P0,A6,I5,P0,A6,P1)
+R7 = Ray(P0,A6)
+LS8 = LineSegment(P2,P1)
+I9 = Intersect(LS8,R7)
+
+Output:
+I9
+Conclude angle(P2,P0,I9)=angle(I9,P0,P1)
+
+
+
+Construction "Altitude"
+
+Input:
+P0 (234,335)
+P1 (420,336)
+P2 (317,235)
+
+Steps:
+C3 = Circle(P0,P2)
+C4 = Circle(P1,P2)
+I5 I6 = Intersect(C3,C4)
+"Axiom - SSS"(P0,P1,I6,P0,P1,I5)
+LS7 = LineSegment(P0,P1)
+LS8 = LineSegment(I6,P2)
+I9 = Intersect(LS8,LS7)
+"Axiom - SAS"(P0,I9,I6,P0,I9,P2)
+"Axiom - Angle Sum"(I6,I9,P2,P0)
+"Axiom - Angle Sum"(P0,I9,P1,P2)
+"Axiom - Angle Sum"(P0,I9,P1,I6)
+
+Output:
+I9
+Conclude PI=2*angle(P0,I9,P2)
+Conclude PI=2*angle(P1,I9,P2)
+
+Construction "InCenter"
+
+Input:
+P0 (189,390)
+P1 (336,386)
+P2 (270,163)
+
+Steps:
+A3 = "AngleBisector"(P0,P1,P2)
+A4 = "AngleBisector"(P1,P0,P2)
+LS5 = LineSegment(P0,A3)
+LS6 = LineSegment(A4,P1)
+I7 = Intersect(LS5,LS6)
+A8 = "Altitude"(P2,P0,I7)
+A9 = "Altitude"(P0,P1,I7)
+A10 = "Altitude"(P1,P2,I7)
+"SumAnglesTri=Pi"(P0,I7,A8)
+"SumAnglesTri=Pi"(P0,I7,A9)
+"SumAnglesTri=Pi"(P1,I7,A9)
+"SumAnglesTri=Pi"(I7,P1,A10)
+"Axiom - ASA"(A8,I7,P0,A9,I7,P0)
+"Axiom - ASA"(A9,I7,P1,A10,I7,P1)
+
+Output:
+A9
+I7
+A8
+A10
+Conclude dist(I7,A10)=dist(I7,A9)
+Conclude dist(I7,A9)=dist(I7,A8)
+
+
+Construction "SSRA"
+
+Input:
+P0 (131,407)
+P1 (229,402)
+P2 (127,290)
+P3 (365,395)
+P4 (455,390)
+P5 (361,290)
+Assume dist(P3,P4)=dist(P0,P1)
+Assume dist(P5,P4)=dist(P2,P1)
+Assume PI=2*angle(P1,P0,P2)
+Assume PI=2*angle(P4,P3,P5)
+
+Steps:
+A6 = "DoubleLength"(P4,P3)
+A7 = "DoubleLength"(P1,P0)
+"Axiom - Angle Sum"(P4,P3,A6,P5)
+"Axiom - Angle Sum"(P1,P0,A7,P2)
+"Axiom - SAS"(P3,P4,P5,P3,A6,P5)
+"Axiom - SAS"(P0,P1,P2,P0,A7,P2)
+"Axiom - SSS"(P1,A7,P2,P4,A6,P5)
+"Axiom - SAS"(P4,P3,P5,P1,P0,P2)
+
+Output:
+Conclude dist(P5,P3)=dist(P2,P0)
+Conclude angle(P3,P4,P5)=angle(P0,P1,P2)
+Conclude angle(P4,P5,P3)=angle(P1,P2,P0)
+
+Construction "CoincidentAngleBisectors"
+
+Input:
+P0 (167,412)
+P1 (313,411)
+P2 (252,220)
+
+Steps:
+A3 = "AngleBisector"(P0,P1,P2)
+A4 = "AngleBisector"(P1,P2,P0)
+LS5 = LineSegment(P0,A3)
+LS6 = LineSegment(P1,A4)
+I7 = Intersect(LS5,LS6)
+A8 = "Altitude"(P2,P0,I7)
+A9 = "Altitude"(P0,P1,I7)
+A10 = "Altitude"(P1,P2,I7)
+"SumAnglesTri=Pi"(P0,I7,A8)
+"SumAnglesTri=Pi"(P0,I7,A9)
+"SumAnglesTri=Pi"(P1,I7,A9)
+"SumAnglesTri=Pi"(P1,I7,A10)
+"Axiom - ASA"(A8,I7,P0,A9,I7,P0)
+"Axiom - ASA"(A9,I7,P1,A10,I7,P1)
+"SSRA"(A8,I7,P2,A10,I7,P2)
+
+Output:
+I7
+Conclude angle(I7,P2,P1)=angle(P0,P2,I7)
+

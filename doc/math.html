@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <!-- SGI_COMMENT COSMOCREATE -->
+    <!-- SGI_COMMENT VERSION NUMBER="1.0.1" -->
+    <TITLE> The Mathematics of GRACE </TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<CENTER><H2 ALIGN="CENTER">
+An overview of the mathematics of GRACE </H2>
+</CENTER><P>
+Rigorous proofs for ruler and compass construction can be very subtle. 
+In this section, we give a quick overview of the mathematical framework 
+for the proof system used in GRACE. </P>
+<P>
+<B>Contents:</B> </P>
+<UL>
+    <LI>
+    <A HREF="constructions">Constructions</A> 
+    <LI>
+    <A HREF="constraints">Constraints</A> 
+    <LI>
+    <A HREF="automatic">Constraints from primitive operations</A> 
+    <LI>
+    <A HREF="sidedness">Handling sided-ness using rays and line segments</A>
+     
+    <LI>
+    <A HREF="failure">Failure of a construction</A> 
+</UL>
+<HR>
+<H3>
+Constructions</H3>
+<P>
+The fundamental building block of GRACE is the construction. A 
+construction takes some points as inputs, and produces some outputs. 
+There may be restrictions on the input shapes, called input 
+constraints, that must be met before the construction can be applied. 
+The construction may produce shapes as output, constraints as output, 
+or both. For instance, the midpoint construction produces the midpoint 
+as output, plus a constraint that asserts that the point is halfway 
+between the inputs. The term &quot;theorem&quot; refers to a 
+construction that produces no output shapes, and &quot;axiom&quot; 
+refers to a construction for which no proof is provided. 
+&quot;Primitive&quot; refers to an axiom that is built-in to the 
+system. (such as &quot;Line&quot; and &quot;Intersect&quot;.) The 
+&quot;Intersect&quot; primitive is unique in that it is the only 
+construction that may return a variable number of shapes, and it is 
+also the only construction that accepts any shape other than points as 
+input.</P>
+<P>
+</P>
+<H3>
+Constraints</H3>
+<P>
+Proofs in GRACE involve constraints, which are symbolic mathematical 
+statements regarding the relationship of points. There are two kinds of 
+measurements - the distance between two points, and the angle between 
+three points. Constraints are expressed as a linear combination of 
+measurements with positive integer coefficients. Constraints do not 
+include constant terms (except for PI in angle constraints).</P>
+<P>
+Constraints are created as assumptions, as outputs from constructions, 
+and automatically during intersection. (Constructions that use 
+intersect may also create automatic constraints.) Any constraint that 
+can be expressed as a linear combination of other constraints will also 
+be recognized by GRACE as true.</P>
+<P>
+In the first version of GRACE, measurements may only be in terms of 
+points. You cannot, for instance, use the length of a line or the 
+distance between two circles. Additionally, construction inputs may 
+only be points, and intersections may only produce points. </P>
+<H3>
+<A NAME="automatic">Constraints from primitive operations </A></H3>
+<P>
+<A NAME="automatic">Constructions in GRACE are created from a sequence 
+of primitive constructions. These primitive constraints are of two 
+types. The &quot;Line&quot;, &quot;Circle, &quot;Line segment&quot;, 
+&quot;Ray&quot; and &quot;Complementary ray&quot; constructions take a 
+pair of points and create a curve. Points on these curves can be 
+characterized by simple distance constraints. For example, a circle 
+with center p and containing a point q is the set of all points r such 
+that <I>dist(p,q)=dist(p,r)</I>. The line segment with endpoints p and 
+q is the set of all points r such that <I>dist(p,r)+dist(r,q)=dist(p,q)</I>. 
+GRACE associates such a constraint with each line or circle created. </A></P>
+<P>
+<A NAME="automatic">The &quot;Intersection&quot; primitive takes a pair 
+of curves, computes their intersection points numerically, and 
+instantiates for each point the symbolic distance constraints 
+associated with the curves. For example, if an intersection produces 
+two new points x and y on a Circle(p,q), then GRACE creates two new 
+constraints: <I>dist(p,q)=dist(p,x)</I> and <I>dist(p,q)=dist(p,y)</I>. 
+These symbolic constraints are the building blocks for further 
+constraints. </A></P>
+<H3>
+<A NAME="sidedness">Handling sided-ness using rays and line segments </A></H3>
+<P>
+<A NAME="sidedness">Traditional ruler and compass constructions (e.g 
+Euclid) rely on a static diagram that encodes how the curves in the 
+diagram intersect. The diagram also encodes subtle notions of 
+sided-ness that are never explicitly stated. GRACE explicitly captures 
+sided-ness using the linear primitives, &quot;Ray&quot;, 
+&quot;Complementary ray&quot; and &quot;Line segment&quot;. For 
+example, &quot;Ray(p,q)&quot; consists of those points r that are on 
+the same sided of p as q. Given another point x, GRACE automatically 
+treats the expressions <I>angle(x,p,q)</I> and <I>angle(x,p,r)</I> as 
+being identical. This type of simplification is usually done without 
+comment in traditional proofs. If it is noted, the reader is referred 
+to the diagram. </A></P>
+<P>
+<A NAME="sidedness">Proofs in GRACE often require a higher level of 
+rigor. The user must specify the linear primitive that correctly 
+captures the sided-ness necessary in the proof. 
+&quot;Complementary_ray(p,q)&quot; consists of those points that are on 
+the opposite side of p from q. &quot;Line_segment(p,q)&quot; consists 
+of those points that are between p and q. Given this information, GRACE 
+is designed to infer the relevant distance constraints from these 
+linear primitives automatically. </A></P>
+<H3>
+<A NAME="failure">Failure of a construction </A></H3>
+<P>
+<A NAME="failure">During the definition of a construction, the user may 
+perform various intersection operations. The operations may have zero, 
+one, or two points as their result depending on the curve primitives 
+and geometric location of their input points. As the user drags the 
+input points, the number of intersection points may change. Once an 
+intersection is specified and its intersection points computed 
+numerically, GRACE treats a change in the number of output points as a 
+failure of the construction. </A></P>
+<P>
+<A NAME="failure">For example, suppose a construction uses the 
+intersection of two circles. If these circles fail to intersect, then 
+the construction makes little sense and should be viewed as having 
+failed. One way of viewing this policy is that the user specifies the 
+input configuration consistent with the intent of the construction. 
+Radical changes in the location of the input points may result in a 
+totally different construction. </A></P>
+<P>
+<A NAME="failure">Given a set of input and output constraints 
+associated with a construction, a proof in GRACE asserts that if the 
+input constraints are satisfied AND the construction succeeds (i.e. 
+does not fail), then the output points are guaranteed to satisfy the 
+output constraints. Note that proofs in GRACE make no guarantees about 
+whether a particular construction succeeds. Proving that a construction 
+always succeeds is often beyond the scope of GRACE. </A></P>
+<A NAME="failure"><HR>
+</A><P>
+<A NAME="failure">Return to </A><A HREF="index.html" NAME="failure">GRACE 
+main page</A><A NAME="failure"> </A></P>
+</BODY>
+</HTML>

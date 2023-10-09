@@ -1,0 +1,105 @@
+
+Construction "PerpBisector"
+
+Input:
+P0 (163,274)
+P1 (265,266)
+
+Steps:
+C2 = Circle(P0,P1)
+C3 = Circle(P1,P0)
+I4 I5 = Intersect(C2,C3)
+"Axiom - SSS"(I5,I4,P0,I5,I4,P1)
+LS6 = LineSegment(P0,P1)
+LS7 = LineSegment(I5,I4)
+I8 = Intersect(LS6,LS7)
+"Axiom - SAS"(I4,I8,P0,I4,I8,P1)
+"Axiom - Angle Sum"(P1,I8,P0,I4)
+
+Output:
+I8
+I4
+Conclude dist(I8,P1)=dist(I8,P0)
+Conclude PI=2*angle(I4,I8,P0)
+Conclude 2*angle(I4,I8,P1)=PI
+
+
+Construction "CircumCenter"
+
+Input:
+P0 (124,342)
+P1 (344,292)
+P2 (206,259)
+
+Steps:
+A3 A4 = "PerpBisector"(P2,P0)
+A5 A6 = "PerpBisector"(P1,P2)
+R7 = Ray(A3,A4)
+R8 = Ray(A5,A6)
+I9 = Intersect(R8,R7)
+"Axiom - SAS"(A3,I9,P0,A3,I9,P2)
+"Axiom - SAS"(A5,I9,P2,A5,I9,P1)
+
+Output:
+I9
+Conclude dist(I9,P2)=dist(I9,P1)
+Conclude dist(I9,P0)=dist(I9,P2)
+
+Construction "ExtendLength"
+
+Input:
+P0 (161,219)
+P1 (237,179)
+P2 (302,189)
+
+Steps:
+CR3 = CompRay(P1,P0)
+C4 = Circle(P1,P2)
+I5 = Intersect(CR3,C4)
+
+Output:
+I5
+Conclude dist(P1,P0)+dist(P1,P2)=dist(I5,P0)
+
+
+Construction "CopyLength"
+
+Input:
+P0 (154,213)
+P1 (189,176)
+P2 (252,205)
+P3 (336,179)
+
+Steps:
+A4 A5 = "Parallelogram"(P2,P3,P1)
+A6 = "ExtendLength"(P0,P1,A5)
+
+Output:
+A6
+Conclude dist(P1,P0)+dist(P2,P3)=dist(A6,P0)
+
+
+
+
+Construction "Elliptograph"
+
+Input:
+P0 (137,356)
+P1 (301,345)
+P2 (248,303)
+P3 (41,136)
+
+Steps:
+A4 = "ExtendLength"(P0,P2,P1)
+R5 = Ray(P0,P3)
+C6 = Circle(P0,A4)
+I7 = Intersect(R5,C6)
+LS8 = LineSegment(I7,P0)
+A9 A10 = "PerpBisector"(P1,I7)
+R11 = Ray(A9,A10)
+I12 = Intersect(LS8,R11)
+"Axiom - SAS"(A9,I12,I7,A9,I12,P1)
+
+Output:
+I12
+Conclude dist(I12,P0)+dist(I12,P1)=dist(P0,P2)+dist(P1,P2)

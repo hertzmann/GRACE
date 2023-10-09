@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <!-- SGI_COMMENT COSMOCREATE -->
+    <!-- SGI_COMMENT VERSION NUMBER="1.0.1" -->
+    <TITLE> GRACE User's Manual </TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<CENTER><H2 ALIGN="CENTER">
+GRACE User's Manual</H2>
+</CENTER><P>
+<B>Contents:</B> </P>
+<UL>
+    <LI>
+    <A HREF="#start">Starting GRACE</A> 
+    <LI>
+    <A HREF="#mainwin">Main Window</A> 
+    <UL>
+        <LI>
+        <A HREF="#constarea">Construction area</A> 
+        <LI>
+        <A HREF="#pointops">Point operations</A> 
+        <LI>
+        <A HREF="#viewcons">View controls</A> 
+        <LI>
+        <A HREF="#conslist">Construction list</A> 
+        <LI>
+        <A HREF="#editmenu">Edit menu</A> 
+        <LI>
+        <A HREF="#consmenu">Construction menu</A> 
+        <LI>
+        <A HREF="#libsmenu">Libraries menu</A> 
+        <LI>
+        <A HREF="#winmenu">Windows menu</A> 
+    </UL>
+    <LI>
+    <A HREF="#textwin">Text window</A> 
+    <LI>
+    <A HREF="#exprwin">Expressions window</A> 
+    <LI>
+    <A HREF="#constwin">Constraints window</A> 
+</UL>
+<HR>
+<P>
+</P>
+<H3>
+<A NAME="start">Starting GRACE </A></H3>
+<P>
+<A NAME="start">To run GRACE, press the button marked &quot;Start 
+GRACE&quot;. The program will be downloaded to your computer. Depending 
+on the speed of your network connection, this may take a few minutes; 
+please be patient. A status window will appear to show the progress of 
+the download. When it has finished, the GRACE window will appear. </A></P>
+<H3>
+<A NAME="mainwin">Main window </A></H3>
+<P>
+<A NAME="mainwin">The main window contains the <B>Construction area</B>, 
+a large white field for graphically creating and viewing constructions. 
+Above this area is a <B>Message box</B> that displays information about 
+the current state of the construction. To the right of the display area 
+is the <B>Construction list</B> of currently available primitives and 
+constructions. Below this area is are two sets of buttons, <B>Point 
+operations </B>and <B>View controls</B>. </A></P>
+<P>
+<A NAME="constarea"><B>Construction area</B> </A></P>
+<P>
+<A NAME="constarea">The construction area shows a graphical display of 
+the current construction in progress. </A></P>
+<P>
+<A NAME="pointops"><B>Point operations</B> </A></P>
+<P>
+</P>
+<UL>
+    <LI>
+    <A NAME="pointops"><EM>Place input </EM><BR>
+     Allows the user to enter a sequence of points as input to a ruler and 
+    compass construction. </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="pointops"><EM>Drag input </EM><BR>
+     Allows the user to move input points within the Construction area. 
+    Constructions depending on these points are updated dynamically. </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="pointops"><EM>Select output </EM><BR>
+     Allows the user to specify shapes as output of the construction. When 
+    a construction is applied within another construction, only the output 
+    shapes are displayed </A>
+</UL>
+<P>
+</P>
+<P>
+<A NAME="viewcons"><B>View controls</B> </A></P>
+<P>
+</P>
+<UL>
+    <LI>
+    <A NAME="viewcons"><EM>Up, Down, Left, Right </EM><BR>
+     Translates the construction area in the specified direction. </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="viewcons"><EM>In, Out </EM><BR>
+     Zoom in or out of the construction area. </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="viewcons"><EM>Center </EM><BR>
+     Centers and rescales the construction area so that all points are 
+    visible. </A>
+</UL>
+<P>
+</P>
+<P>
+<A NAME="conslist"><B>Construction list</B> </A></P>
+<P>
+<A NAME="conslist">To the right of the display area is a list of 
+available primitives and constructions. The primitives -- 
+&quot;Circle,&quot; &quot;Line,&quot; &quot;Line Segment,&quot; 
+&quot;Ray,&quot; &quot;Complementary Ray,&quot; &quot;Perpendicular 
+Bisector,&quot; and &quot;Intersection&quot; -- are built-in to GRACE. 
+Other constructions can be added to this list when they are defined and 
+loaded from libraries. </A></P>
+<P>
+<A NAME="conslist">To apply a primitive or construction, select it by 
+clicking on its name. To specify the arguments to the construction, 
+click on each of the points to use as input. Note that the order of the 
+arguments to some constructions is important. The message box usually 
+gives information about each argument. </A></P>
+<P>
+<A NAME="editmenu"><B>Edit menu</B> </A></P>
+<P>
+</P>
+<UL>
+    <LI>
+    <A NAME="editmenu"><EM>Labels </EM><BR>
+     Displays the label associated with each shape. </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="editmenu"><EM>Undo </EM><BR>
+     Allows the user to undo the last step. Multiple undos are not 
+    supported. Note that certain types of actions, such as <EM>Clear 
+    workspace</EM> cannot be undone. </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="editmenu"><EM>Clear workspace </EM><BR>
+     Deletes the current construction and all expressions and constraints 
+    associated with it. </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="editmenu"><EM>Quit </EM><BR>
+     Quit GRACE. </A>
+</UL>
+<P>
+</P>
+<P>
+<A NAME="consmenu"><B>Construction menu</B> </A></P>
+<P>
+</P>
+<UL>
+    <LI>
+    <A NAME="consmenu"><EM>View selected </EM><BR>
+     Views the construction selected in the construction list. Any current 
+    construction is cleared and replaced by the steps of the new 
+    construction, as if they had been entered manually </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="consmenu"><EM>Delete selected </EM><BR>
+     Deletes the construction selected in the construction list </A>
+    <P>
+    </P>
+    <LI>
+    <A NAME="consmenu"><EM>Name current...</EM> <BR>
+     Assigns a name to the current construction and places it in the 
+    construction list. </A>
+    <P>
+    </P>
+</UL>
+<P>
+</P>
+<P>
+<A NAME="libsmenu"><B>Libraries menu</B> </A></P>
+<P>
+<A NAME="libsmenu">The <B>Libraries menu</B> allows the user to load an 
+entire library of constructions into GRACE. Several example libraries 
+are provided. &quot;Basic&quot; provides simple, commonly-used 
+constructions. The remaining example libraries perform advanced 
+constructions. The &quot;Basic&quot; library must be loaded before the 
+advanced libraries are loaded.</A></P>
+<P>
+<A NAME="libsmenu"><EM>Enter URL...</EM> may be used to load a library 
+from a specific URL. Due to Java security restrictions in most 
+browsers, the library may only be loaded from the server that provided 
+the Java applet (www.cs.rice.edu). The <EM>Enter library text</EM>
+ option may be used to paste or type the text of a library directly 
+into a window. </A></P>
+<P>
+<A NAME="winmenu"><B>Windows menu</B> </A></P>
+<P>
+<A NAME="winmenu">These options bring up the <B>Text window</B>, the <B>Expressions 
+window</B>, and the <B>Constraints window</B> as described below. </A></P>
+<H3>
+<A NAME="textwin">Text window </A></H3>
+<P>
+<A NAME="textwin">This window displays a textual representation of the 
+current construction. The top portion displays the names of the input 
+points. The middle portion displays the individual steps of the 
+construction. The names of the shapes produced by each step are listed 
+on the left-hand side of each statement. These tags correspond to the 
+&quot;labels&quot; used in the display area. </A></P>
+<P>
+<A NAME="textwin">During the course of a construction, several 
+coincident geometric primitives may be constructed. When labels 
+overlap, GRACE displays the label for only the most recently defined 
+shape. Also, when two shapes are near the click, the most recently 
+defined shape will be selected. This makes it difficult to select a 
+shape that is completely obscured by another shape. To select an 
+obscured shape, first click on the statement in the text window that 
+defines that shape. The label for that shape will then be displayed and 
+the shape can be selected. For instance, in the following sequence of 
+steps, shapes P0 and P1 become obscured by I5 and I6: </A></P>
+<PRE>
+
+<A NAME="textwin">   P0</A>
+<A NAME="textwin">   P1</A>
+
+<A NAME="textwin">   A2 = &quot;Midpoint&quot;(P1,P0)</A>
+<A NAME="textwin">   L3 = Line(P0,P1)</A>
+<A NAME="textwin">   C4 = Circle(A2,P0)</A>
+<A NAME="textwin">   I5 I6 = Intersect(C4,L3)</A>
+
+</PRE>
+<P>
+<A NAME="textwin">Click on P0 or P1 in the Text window to make the 
+inputs visible; click on &quot;I5 I6 = Intersect(C4,L3)&quot; to make 
+the intersection points visible again. </A></P>
+<P>
+<A NAME="textwin">Because Java applets are untrusted, GRACE cannot save 
+constructions to a file. However, clicking the &quot;pure text&quot; 
+button creates a window containing the actual text representation used 
+in GRACE libraries. This text can be copied from the window and saved 
+to a file. Several constructions can be saved in the same file, but all 
+constructions must be defined before their use. The &quot;Enter 
+URL...&quot; option in the &quot;Library&quot; menu can be used to load 
+the file. Due to security restrictions, however, most browsers will 
+only allow a URL to be loaded from the same site that GRACE came from. 
+Alternately, the &quot;Enter library text&quot; option can be used to 
+paste the text of the constructions in directly to a window. </A></P>
+<H3>
+<A NAME="exprwin">Expressions window </A></H3>
+<P>
+<A NAME="exprwin">This window allows the user to create expressions 
+involving distances and angles with the mouse. The expressions are 
+displayed textually and their current values are displayed graphically. 
+Dragging input points causes the expressions to be updated 
+continuously. Expressions can be used to compare various quantities 
+associated with a construction, and are also the building blocks for 
+the constraints used in proofs. </A></P>
+<P>
+<A NAME="exprwin">The left column of the window displays distance 
+expressions, while the right column displays angle expressions. 
+Clicking &quot;New Distance&quot; starts the entry of a new distance 
+expression. Clicking on a pair of points adds their distance to the 
+current distance expression. A similar process allows the creation of 
+angle expressions. Expressions using pi (180 degrees) can be created 
+using the &quot;Add Pi&quot; button. </A></P>
+<P>
+<A NAME="exprwin"><I>dist(A,B)</I> represents the distance between two 
+points A and B. <I>angle(A,B,C)</I> represents the angle ABC. (The apex 
+is at B.) </A></P>
+<H3>
+<A NAME="contswin">Constraints window </A></H3>
+<P>
+<A NAME="contswin">A constraint is an equation involving a pair of 
+expressions. Constraints can be used to characterize the behavior of a 
+ruler and compass construction. For example, a constraint can express 
+that the sum of the angles in a triangle is Pi. The constraint window 
+allows the user to create, manipulate and display constraints 
+associated with a construction. </A></P>
+<P>
+<A NAME="contswin">GRACE supports three types of constraints: </A></P>
+<DL>
+    <DT>
+    <A NAME="contswin"><EM>Input constraints </EM></A>
+    <DD>
+    <A NAME="contswin">Input constraints describe the relationships 
+    between the input points to a ruler and compass construction. The 
+    &quot;create input&quot; button allows the user to specify input 
+    constraints during a construction. Before applying the construction, 
+    GRACE symbolically verifies that the input points satisfy all input 
+    constraints. However, GRACE does not require the construction to 
+    satisfy input constraints during its definition. (Note this does not 
+    affect the validity of the construction and proof.) </A>
+    <DT>
+    <A NAME="contswin"><EM>Intermediate constraints </EM></A>
+    <DD>
+    <A NAME="contswin">These constraints relate angles and distances 
+    produced during intermediate step of the construction. Typically, these 
+    constraints are derived from input constraints using axioms and other 
+    user defined constructions. The &quot;test intermediate&quot; button 
+    allows the user to test symbolically whether a particular intermediate 
+    constraint is true. </A>
+    <P>
+    <A NAME="contswin">The user can also create additional axioms using 
+    the &quot;Force intermediate&quot; button. GRACE adds the constraint to 
+    the current set of valid constraints without any further symbolic 
+    checking. Constructions that use forced constraints should be 
+    considered axioms, not proofs. </A></P>
+    <DT>
+    <A NAME="contswin"><EM>Output constraints </EM></A>
+    <DD>
+    <A NAME="contswin">These constraints relate input primitives to 
+    output primitives. They are those constraints produced by applying a 
+    construction. The &quot;Create output&quot; buttons allows the user to 
+    select an intermediate constraints (or create a new constraint) and add 
+    it to the set of output constraints. </A>
+</DL>
+<P>
+<A NAME="contswin">GRACE displays the current set of known constraints 
+in the constraint window. Each constraint is preceded by the number of 
+the construction that produced the constraint. The tag &quot;F&quot; 
+means the constraint was forced with the &quot;Force constraint&quot; 
+command. The tag &quot;A&quot; means that the system automatically 
+generated the constraint. A new constraint is true if it can be 
+expressed as a linear combination of existing constraints. GRACE uses 
+linear algebra to do this test automatically. </A></P>
+<A NAME="contswin"><HR>
+</A><P>
+<A NAME="contswin">Return to </A><A HREF="index.html" NAME="contswin">GRACE 
+main page</A><A NAME="contswin"> </A></P>
+</BODY>
+</HTML>

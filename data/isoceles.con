@@ -1,0 +1,93 @@
+
+Construction "IsocelesSA"
+
+Input:
+P0 (199,220)
+P1 (138,137)
+P2 (250,131)
+Assume dist(P0,P2)=dist(P0,P1)
+
+Steps:
+"Axiom - SAS"(P0,P1,P2,P0,P2,P1)
+
+Output:
+Conclude angle(P0,P1,P2)=angle(P0,P2,P1)
+
+Construction "IsocelesExteriorAngle"
+
+Input:
+P0 (204,379)
+P1 (269,301)
+P2 (268,193)
+P3 (268,414)
+Assume dist(P2,P1)=dist(P0,P1)
+Assume dist(P1,P3)+dist(P2,P1)=dist(P3,P2)
+
+Steps:
+"IsocelesSA"(P1,P0,P2)
+"SumAnglesTri=Pi"(P0,P1,P2)
+"Axiom - Angle Sum"(P3,P1,P2,P0)
+
+Output:
+Conclude angle(P3,P1,P0)=2*angle(P0,P2,P3)
+
+Construction "InscribedAngle"
+
+Input:
+P0 (227,464)
+P1 (289,370)
+P2 (352,453)
+P3 (282,263)
+Assume dist(P1,P2)=dist(P1,P3)
+Assume dist(P1,P3)=dist(P1,P0)
+
+Steps:
+LS4 = LineSegment(P0,P2)
+CR5 = CompRay(P1,P3)
+I6 = Intersect(LS4,CR5)
+"IsocelesExteriorAngle"(P0,P1,P3,I6)
+"IsocelesExteriorAngle"(P2,P1,P3,I6)
+"Axiom - Angle Sum"(P0,I6,P2,P1)
+"Axiom - Angle Sum"(P0,I6,P2,P3)
+
+Output:
+Conclude angle(P0,P1,P2)=2*angle(P0,P3,P2)
+
+
+Construction "InscribedRightAngle"
+
+Input:
+P0 (190,306)
+P1 (306,304)
+P2 (403,305)
+P3 (251,207)
+Assume dist(P0,P1)+dist(P1,P2)=dist(P0,P2)
+Assume dist(P0,P1)=dist(P1,P3)
+Assume dist(P1,P2)=dist(P1,P3)
+
+Steps:
+"Axiom - Angle Sum"(P0,P1,P2,P3)
+"IsocelesSA"(P1,P3,P0)
+"IsocelesSA"(P1,P3,P2)
+
+Output:
+Conclude PI=2*angle(P0,P3,P2)
+
+Construction "Tangent2Circle"
+
+Input:
+P0 (204,320)
+P1 (149,248)
+P2 (353,323)
+
+Steps:
+C3 = Circle(P0,P1)
+A4 = "Midpoint"(P0,P2)
+C5 = Circle(A4,P0)
+I6 I7 = Intersect(C3,C5)
+"InscribedRightAngle"(P0,A4,P2,I6)
+
+Output:
+I6
+Conclude PI=2*angle(P0,I6,P2)
+

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <!-- SGI_COMMENT COSMOCREATE -->
+    <!-- SGI_COMMENT VERSION NUMBER="1.0.1" -->
+    <TITLE>GRACE - Graphical Ruler and Compass Editor</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<CENTER><H2 ALIGN="CENTER">
+<A NAME="part4"><FONT COLOR="#7c0000">GRACE - Graphical Ruler and 
+Compass Editor</FONT></A><BR>
+ACM/IBM Quest for Java '97</H2>
+</CENTER><CENTER><P ALIGN="CENTER">
+<A HREF="http://www.cat.nyu.edu/hertzmann/"><FONT COLOR="#000050">Aaron 
+Hertzmann</FONT></A><BR>
+ <FONT COLOR="#000050">New York University</FONT><BR>
+ <A HREF="mailto:hertzman@cat.nyu.edu"><I><FONT COLOR="#000050">hertzman@cat.nyu.edu</FONT></I></A></P>
+</CENTER><P>
+<I><FONT SIZE="4">Welcome to GRACE, the Graphical Ruler and Compass
+Editor.</FONT></I> GRACE is an interactive ruler and compass construction editor for use in teaching
+the fundamental concepts of geometry to high school students. With
+GRACE's intuitive graphical user interface, students can both define
+geometric constructions, and create formal proofs about their
+constructions. </P>
+<P>
+GRACE allows dynamic creation and modification of ruler and compass 
+constructions, allowing students to easily visualize the steps of a 
+construction and how it varies for different inputs. Constructions may 
+be built from one of five geometric primitives (Line, Line Segment, 
+Ray, Circle, Perpendicular Bisector, and Intersection), and from other 
+constructions; thus constructions may be built by composing more basic 
+constructions.</P>
+<P>
+GRACE's powerful proof system is based on equality constraints over 
+angles and distances. The system automatically infers constraints from 
+the geometric primitives and axioms applied by the student. The student 
+may then make assertions about the construction, which will be 
+automatically verified by the system, so it is <I>impossible to prove a 
+false assertion within GRACE. </I>(The exception to this occurs when a 
+construction contains invalid intersections - in this case, no 
+assertions are guaranteed to be valid.) Proofs are verified by an 
+automatic method based on linear algebra, which allows students to 
+reason about geometry without being overwhelmed by the complexities of 
+computer programming or classical logic.</P>
+<P>
+GRACE presents a consistent framework for experimenting with 
+mathematical principles in the context of high schol geometry. GRACE 
+introduces two important mathematical concepts: First, the concept of 
+formally verifying the correctness of a statement - this idea is at the 
+core of classical mathematics. Second, the concept of building an 
+operation by combining a sequence of simpler operations - this idea is 
+fundamental to computer science.</P>
+<H3>
+Getting Started</H3>
+<P>
+To run GRACE, click on the button below, or execute &quot;<TT>java Grace</TT>&quot; 
+at the command line.  (You may want to resize the main window when it appears.)
+
+The best way to learn about the powerful features 
+of GRACE is to follow the steps of the tutorial.</P>
+<UL>
+    <LI>
+    <B><FONT SIZE="4">Click here to </FONT></B><FONT SIZE="4"><APPLET
+     CODE="Grace" WIDTH="100" HEIGHT="25"
+     SGI_SRC="/homes/hertzman/public_html/grace2/Grace">
+    <PARAM NAME="Library Name 1" VALUE="Basic">
+    <PARAM NAME="Library URL 1" VALUE="http://jquest.acm/org/~hertzman/basic.con">
+    <PARAM NAME="Library Name 2" VALUE="Isoceles">
+    <PARAM NAME="Library URL 2" VALUE="http://jquest.acm/org/~hertzman/isoceles.con">
+    <PARAM NAME="Library Name 3" VALUE="Angle Bisector">
+    <PARAM NAME="Library URL 3" VALUE="http://jquest.acm/org/~hertzman/anglebi.con">
+    <PARAM NAME="Library Name 4" VALUE="Perp Bisector">
+    <PARAM NAME="Library URL 4" VALUE="http://jquest.acm/org/~hertzman/perpbi.con">
+     Sorry, your browser doesn't support Java. 
+    </APPLET> </FONT>
+    <LI>
+    <A HREF="tutorial.html"><B><FONT SIZE="4">Tutorial</FONT></B></A><FONT
+     SIZE="4"> - A step-by-step guide to GRACE's features</FONT> 
+    <LI>
+    <A HREF="manual.html"><B><FONT SIZE="4">User's Manual</FONT></B></A><FONT
+     SIZE="4"> - Detailed descriptions of the GRACE user interface.</FONT>
+     
+    <LI>
+    <A HREF="math.html"><B><FONT SIZE="4">Mathematics</FONT></B></A><FONT
+     SIZE="4"> - The underlying mathematics that make GRACE work.</FONT>
+     
+</UL>
+<P>
+GRACE includes the capability to load libraries from a URL. Due to Java 
+security restrictions, you will not be able to load files while running 
+in a browser, unless GRACE is set up at a WWW site and the URLs given 
+in the applet parameters in the index.html are set correctly. To avoid 
+this problem, run the program from the command line, or from the <A
+ HREF="http://www.cs.rice.edu/~jwarren/grace/">official page</A>. </P>
+<H3>
+About this Project</H3>
+<P>
+This software was written at Rice University, under the supervision of 
+Joe Warren. GRACE was implemented in Java 1.0.2, but is fully 
+compatible with Java 1.1.1. </P>
+<P>
+<B>Java on IRIX</B>: GRACE sometimes causes a long list of warning 
+messages when running on SGI systems; these are bugs in the API. Also, 
+windows may appear too small when first opened, and need to be resized. 
+These problems do not appear on the other systems that I have tested.</P>
+</BODY>
+</HTML>
