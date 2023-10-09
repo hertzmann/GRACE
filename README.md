@@ -1,2 +1,31 @@
 # GRACE
 Graphical Ruler and Compass Editor
+
+GRACE is a Java applet that allows the student to specify constructions and their associated proofs interactively.
+
+It was written in Summer 1996, and not updated since, but still basically works. 
+
+# Screenshot
+
+
+# Installation
+
+If necessary, install Java with your favorite client. For example, OS X with homebrew already installed:
+
+```
+brew install java
+rehash
+```
+
+Then, to run
+```
+cd java
+javac *.java
+java GRACE
+```
+
+# Docs
+
+For documentation, start with the `index.html` file in `doc`.
+
+Some sample data files are in `data`, move them into the execution folder to use.
