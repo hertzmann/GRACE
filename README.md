@@ -2,9 +2,9 @@
 
 GRACE is a Java applet that allows a student to specify constructions and their associated proofs interactively.
 
-It was written in Summer 1996, and not updated since, but still basically works. 
-
 For more info, see [the project homepage](https://www.cs.rice.edu/~jwarren/grace/).
+
+It was written in Summer 1996, and not updated since, but still works. 
 
 # Screenshot
 
