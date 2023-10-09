@@ -8,6 +8,7 @@ It was written in Summer 1996, and not updated since, but still works.
 
 # Screenshot
 
+![Screenshot](grace-screenshot.jpg)
 
 # Installation
 
