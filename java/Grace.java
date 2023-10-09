@@ -668,7 +668,7 @@ class ConstructionPanel extends Panel implements Constants
 {
   /** The currently selected construction */
   Construction current = null;
-  List cList;                 // the list of constructions
+  java.awt.List cList;                 // the list of constructions
   Hashtable constructions = new Hashtable();  // Construction lookup table
   TextField messageBox;            // prompt field
   TextArea description;        // the construction description area
@@ -702,7 +702,7 @@ class ConstructionPanel extends Panel implements Constants
 			   boolean isApp)
     {
       // initialize the construction list
-      cList = new List();
+      cList = new java.awt.List();
       cList.setMultipleSelections(false);
       cList.addItem("Circle",CIRCLE_BUTTON);
       cList.addItem("Line",LINE_BUTTON);

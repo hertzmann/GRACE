@@ -22,13 +22,13 @@ public class Editor extends Frame implements Constants
   String currentName = "New Construction";
 
   /** The display of inputs */
-  List inputsList;
+  java.awt.List inputsList;
 
   /** The display of intermediate steps */
-  List stepsList;
+  java.awt.List stepsList;
 
   /** The display of outputs */
-  List outputList;
+  java.awt.List outputList;
 
   /** The number of inputs */
   int inputCounter = 0;
@@ -503,7 +503,7 @@ public boolean handleEvent(Event e)
       {
       case Event.LIST_SELECT:
 	// get which list was hit
-	List target = (List)e.target;
+	java.awt.List target = (java.awt.List)e.target;
 
 	// get the index of the selected item
 	int index = ((Integer)e.arg).intValue();
@@ -794,7 +794,7 @@ public boolean handleEvent(Event e)
 
     p1.add("North",new Label("Input shapes"));
     
-    inputsList = new List(5,false);
+    inputsList = new java.awt.List(5,false);
     p1.add("Center",inputsList);
 
     add("North",p1);
@@ -807,11 +807,11 @@ public boolean handleEvent(Event e)
     p2.setLayout(new BorderLayout());
     p2.add("North",new Label("Output shapes"));
     
-    outputList = new List(5,false);
+    outputList = new java.awt.List(5,false);
     p2.add("Center",outputList);
     p1.add("South",p2);
     
-    stepsList = new List(10,false);
+    stepsList = new java.awt.List(10,false);
     p1.add("Center",stepsList);
 
     add("Center",p1);

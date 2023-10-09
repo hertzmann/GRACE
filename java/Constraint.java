@@ -315,13 +315,13 @@ class ConstraintFrame extends Frame implements Constants
   Nullspace nullspace = new Nullspace();
 
   /** The display of input constraints */
-  List inputList;
+  java.awt.List inputList;
 
   /** The display of intermediate constraints */
-  List stepsList;
+  java.awt.List stepsList;
 
   /** The display of output constraints */
-  List outputList;
+  java.awt.List outputList;
 
   /** The assumptions */
   Vector inputConstraints = new Vector();
@@ -366,19 +366,19 @@ class ConstraintFrame extends Frame implements Constants
       Panel op = new Panel();
       op.setLayout(new BorderLayout());
       op.add("North",new Label("Output constraints"));
-      outputList = new List(4,false);
+      outputList = new java.awt.List(4,false);
       op.add("Center",outputList);
 
       Panel mp = new Panel();
       mp.setLayout(new BorderLayout());
       mp.add("North",new Label("Intermediate constraints"));
-      stepsList = new List(9,false);
+      stepsList = new java.awt.List(9,false);
       mp.add("Center",stepsList);
 
       Panel ip = new Panel();
       ip.setLayout(new BorderLayout());
       ip.add("North",new Label("Input constraints"));
-      inputList = new List(4,false);
+      inputList = new java.awt.List(4,false);
       ip.add("Center",inputList);
       
       Panel p = new Panel();
