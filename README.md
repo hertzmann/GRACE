@@ -28,6 +28,6 @@ java GRACE
 
 # Docs
 
-For documentation, start with the `index.html` file in `doc`.
+For documentation, start with [this page](https://www.cs.rice.edu/~jwarren/grace/), also copied in the `docs` folder.
 
 Some sample data files are in `data`, move them into the execution folder to use.
